@@ -13,6 +13,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<CategoryItem> categoryItems = CATEGORIES
         .map((data) => CategoryItem(
+              id: data.id,
               title: data.title,
               color: data.color,
             ))
