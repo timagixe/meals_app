@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CategoryRecipiesScreen extends StatelessWidget {
+class CategoryRecipesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Map<String, String> arguments =
@@ -14,7 +14,7 @@ class CategoryRecipiesScreen extends StatelessWidget {
         title: Text(title),
       ),
       body: Center(
-        child: Text('The Recipies Screen\n$id'),
+        child: Text('The Recipes Screen\n$id'),
       ),
     );
   }

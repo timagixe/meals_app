@@ -15,7 +15,7 @@ class CategoryItem extends StatelessWidget {
         assert(color != null);
 
   void selectAcademy(BuildContext context) {
-    Navigator.of(context).pushNamed(AppRoutes.CATEGORY_RECIPIES, arguments: {
+    Navigator.of(context).pushNamed(AppRoutes.CATEGORY_RECIPES, arguments: {
       'id': id,
       'title': title,
     });
