@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/routes/routes.dart';
+
+import '../routes/routes.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -14,7 +15,7 @@ class CategoryItem extends StatelessWidget {
         assert(title != null),
         assert(color != null);
 
-  void selectAcademy(BuildContext context) {
+  void onCategoryItemTap(BuildContext context) {
     Navigator.of(context).pushNamed(AppRoutes.CATEGORY_RECIPES, arguments: {
       'id': id,
       'title': title,
@@ -24,7 +25,7 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => selectAcademy(context),
+      onTap: () => onCategoryItemTap(context),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: const BorderRadius.all(Radius.circular(15)),
       child: Container(
