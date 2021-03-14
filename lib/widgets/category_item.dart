@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/routes/routes.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -14,7 +15,7 @@ class CategoryItem extends StatelessWidget {
         assert(color != null);
 
   void selectAcademy(BuildContext context) {
-    Navigator.of(context).pushNamed('/category-recipies', arguments: {
+    Navigator.of(context).pushNamed(AppRoutes.CATEGORY_RECIPIES, arguments: {
       'id': id,
       'title': title,
     });
