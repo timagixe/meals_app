@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/recipe_item.dart';
 import '../mocks/recipes.dart';
 import '../models/recipe.dart';
 
@@ -17,9 +18,6 @@ class CategoryRecipesScreen extends StatelessWidget {
         )
         .toList();
 
-    print(id);
-    print(recipes);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -27,9 +25,12 @@ class CategoryRecipesScreen extends StatelessWidget {
       body: ListView.builder(
           itemCount: recipes.length,
           itemBuilder: (context, index) {
-            return Center(
-              child: Text('${recipes[index].title}'),
-            );
+            return RecipeItem(
+                title: recipes[index].title,
+                imageUrl: recipes[index].imageUrl,
+                duration: recipes[index].duration,
+                affordability: recipes[index].affordability,
+                complexity: recipes[index].complexity);
           }),
     );
   }
