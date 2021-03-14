@@ -1,6 +1,10 @@
 {
   "conventionalCommits.scopes": [
     "packages",
-    "config"
+    "config",
+    "mocks",
+    "models",
+    "widgets",
+    "screens"
   ]
 }
