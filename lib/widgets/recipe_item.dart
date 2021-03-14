@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './recipe_item_detail.dart';
+import './recipe_item_image.dart';
 import '../models/recipe.dart';
 
 class RecipeItem extends StatelessWidget {
@@ -69,60 +71,24 @@ class RecipeItem extends StatelessWidget {
           onTap: onRecipeItemTap,
           child: Column(
             children: [
-              Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: const Radius.circular(15),
-                      topRight: const Radius.circular(15),
-                    ),
-                    child: Image.network(
-                      imageUrl,
-                      height: 250,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
+              RecipeItemImage(imageUrl: imageUrl),
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 5.0),
-                            child: Icon(Icons.schedule_outlined),
-                          ),
-                          Text('$duration min'),
-                        ],
-                      ),
+                    RecipeItemDetail(
+                      icon: Icons.schedule_outlined,
+                      text: '$duration min',
                     ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 5.0),
-                            child: Icon(Icons.work_outline_outlined),
-                          ),
-                          Text(getComplexity),
-                        ],
-                      ),
+                    RecipeItemDetail(
+                      icon: Icons.work_outline_outlined,
+                      text: getComplexity,
                     ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 5.0),
-                            child: Icon(Icons.attach_money_outlined),
-                          ),
-                          Text(getAffordability),
-                        ],
-                      ),
-                    )
+                    RecipeItemDetail(
+                      icon: Icons.attach_money_outlined,
+                      text: getAffordability,
+                    ),
                   ],
                 ),
               ),
