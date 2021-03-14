@@ -1,4 +1,4 @@
-import 'package:meals_app/models/recipe.dart';
+import '../models/recipe.dart';
 
 const RECIPES = const [
   Recipe(

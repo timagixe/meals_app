@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/routes/routes.dart';
+import './routes/routes.dart';
 
 void main() {
   runApp(MyApp());

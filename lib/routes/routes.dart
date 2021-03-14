@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/screens/categories.dart';
-import 'package:meals_app/screens/category_recipes.dart';
+
+import '../screens/categories.dart';
+import '../screens/category_recipes.dart';
 
 class AppRoutes {
   static const String ROOT = '/';
