@@ -5,6 +5,7 @@
     "mocks",
     "models",
     "widgets",
-    "screens"
+    "screens",
+    "styles"
   ]
 }
