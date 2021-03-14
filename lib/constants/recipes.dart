@@ -135,7 +135,7 @@ const RECIPES = const [
     categories: [
       '3dd47015-b3ea-4c62-8e5d-7d74f0063846',
       '0e34b613-d329-42b7-bc87-dfa87008783b',
-      '168ad065-7ba7-47c6-814f-b59e1e5be987',
+      '5a20a4a2-8d4c-46df-b950-a7ab549288ca',
     ],
     title: 'Salad with Smoked Salmon',
     affordability: Affordability.Luxurious,
@@ -170,7 +170,7 @@ const RECIPES = const [
     id: 'm6',
     categories: [
       '047903d4-d2e7-4ca1-87c7-5d36f1c39cc1',
-      '168ad065-7ba7-47c6-814f-b59e1e5be987',
+      '5a20a4a2-8d4c-46df-b950-a7ab549288ca',
     ],
     title: 'Delicious Orange Mousse',
     affordability: Affordability.Affordable,
@@ -320,7 +320,7 @@ const RECIPES = const [
     categories: [
       '3dd47015-b3ea-4c62-8e5d-7d74f0063846',
       '0e34b613-d329-42b7-bc87-dfa87008783b',
-      '168ad065-7ba7-47c6-814f-b59e1e5be987',
+      '5a20a4a2-8d4c-46df-b950-a7ab549288ca',
     ],
     title: 'Asparagus Salad with Cherry Tomatoes',
     affordability: Affordability.Luxurious,
