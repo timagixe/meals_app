@@ -19,7 +19,7 @@ class CategoryItem extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: const BorderRadius.all(Radius.circular(15)),
         gradient: LinearGradient(
           colors: [
             color.withOpacity(0.7),
