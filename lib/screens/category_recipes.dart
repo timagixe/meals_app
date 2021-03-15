@@ -26,6 +26,7 @@ class CategoryRecipesScreen extends StatelessWidget {
           itemCount: recipes.length,
           itemBuilder: (context, index) {
             return RecipeItem(
+                id: recipes[index].id,
                 title: recipes[index].title,
                 imageUrl: recipes[index].imageUrl,
                 duration: recipes[index].duration,

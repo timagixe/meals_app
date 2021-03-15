@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/routes/routes.dart';
 
 import './recipe_item_detail.dart';
 import './recipe_item_image.dart';
 import '../models/recipe.dart';
 
 class RecipeItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -12,18 +14,24 @@ class RecipeItem extends StatelessWidget {
   final Complexity complexity;
 
   const RecipeItem({
+    @required this.id,
     @required this.title,
     @required this.imageUrl,
     @required this.duration,
     @required this.affordability,
     @required this.complexity,
-  })  : assert(title != null),
+  })  : assert(id != null),
+        assert(title != null),
         assert(imageUrl != null),
         assert(duration != null),
         assert(affordability != null),
         assert(complexity != null);
 
-  void onRecipeItemTap() {}
+  void onRecipeItemTap(BuildContext context) {
+    Navigator.of(context).pushNamed(AppRoutes.RECIPE_DETAILS, arguments: {
+      'id': id,
+    });
+  }
 
   get getComplexity {
     switch (complexity) {
@@ -68,7 +76,7 @@ class RecipeItem extends StatelessWidget {
         elevation: 4,
         margin: const EdgeInsets.all(10),
         child: InkWell(
-          onTap: onRecipeItemTap,
+          onTap: () => onRecipeItemTap(context),
           child: Column(
             children: [
               RecipeItemImage(imageUrl: imageUrl),
