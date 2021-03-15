@@ -19,19 +19,14 @@ class CategoriesScreen extends StatelessWidget {
             ))
         .toList();
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Meals'),
-      ),
-      body: GridView(
-        padding: const EdgeInsets.all(25),
-        children: categoryItems,
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: _kmaxCrossAxisExtent,
-          childAspectRatio: _kchildAspectRatio,
-          crossAxisSpacing: _kcrossAxisSpacing,
-          mainAxisSpacing: _kmainAxisSpacing,
-        ),
+    return GridView(
+      padding: const EdgeInsets.all(25),
+      children: categoryItems,
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: _kmaxCrossAxisExtent,
+        childAspectRatio: _kchildAspectRatio,
+        crossAxisSpacing: _kcrossAxisSpacing,
+        mainAxisSpacing: _kmainAxisSpacing,
       ),
     );
   }
