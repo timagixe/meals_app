@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/widgets/recipe_detail.dart';
+import 'package:meals_app/widgets/recipe_details.dart';
 
 import '../mocks/recipes.dart';
 import '../models/recipe.dart';
@@ -17,7 +17,7 @@ class RecipeDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(id),
       ),
-      body: RecipeDetail(
+      body: RecipeDetails(
         recipe: recipe,
       ),
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/recipe.dart';
 
-class RecipeDetail extends StatelessWidget {
+class RecipeDetails extends StatelessWidget {
   final Recipe recipe;
 
-  const RecipeDetail({@required this.recipe}) : assert(recipe != null);
+  const RecipeDetails({@required this.recipe}) : assert(recipe != null);
 
   Widget buildSectionTitle({BuildContext context, String title}) {
     return Container(
