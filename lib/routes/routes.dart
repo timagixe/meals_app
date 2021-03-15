@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/screens/recipe_details.dart';
 
-import '../screens/categories.dart';
+import '../screens/recipe_details.dart';
 import '../screens/category_recipes.dart';
+import '../screens/tabs.dart';
 
 class AppRoutes {
   static const String ROOT = '/';
@@ -13,7 +13,7 @@ class AppRoutes {
 const String kAppInitialRoute = AppRoutes.ROOT;
 
 Map<String, WidgetBuilder> appRoutes = {
-  AppRoutes.ROOT: (context) => CategoriesScreen(),
+  AppRoutes.ROOT: (context) => TabsScreen(),
   AppRoutes.CATEGORY_RECIPES: (context) => CategoryRecipesScreen(),
   AppRoutes.RECIPE_DETAILS: (context) => RecipeDetailsScreen(),
 };
