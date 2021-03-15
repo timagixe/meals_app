@@ -6,6 +6,7 @@
     "models",
     "widgets",
     "screens",
-    "styles"
+    "styles",
+    "routes"
   ]
 }
