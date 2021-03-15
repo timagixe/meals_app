@@ -79,7 +79,10 @@ class RecipeItem extends StatelessWidget {
           onTap: () => onRecipeItemTap(context),
           child: Column(
             children: [
-              RecipeItemImage(imageUrl: imageUrl),
+              RecipeItemImage(
+                imageUrl: imageUrl,
+                title: title,
+              ),
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Row(
