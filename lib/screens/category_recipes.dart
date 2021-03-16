@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/recipe_item.dart';
-import '../mocks/recipes.dart';
 import '../models/recipe.dart';
 
 class CategoryRecipesScreen extends StatefulWidget {
+  final List<Recipe> availableRecipes;
+
+  CategoryRecipesScreen({
+    @required this.availableRecipes,
+  }) : assert(availableRecipes != null);
   @override
   _CategoryRecipesScreenState createState() => _CategoryRecipesScreenState();
 }
@@ -23,7 +27,7 @@ class _CategoryRecipesScreenState extends State<CategoryRecipesScreen> {
 
       final String id = arguments['id'];
       title = arguments['title'];
-      recipes = RECIPES
+      recipes = widget.availableRecipes
           .where(
             (recipe) => recipe.categories.contains(id),
           )

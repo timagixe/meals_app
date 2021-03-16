@@ -1,11 +1,52 @@
 import 'package:flutter/material.dart';
+
+import './mocks/recipes.dart';
+import './models/filters.dart';
+import './models/recipe.dart';
 import './routes/routes.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Filters _filters = Filters(
+    gluten: false,
+    lactose: false,
+    vegetarian: false,
+    vegan: false,
+  );
+
+  List<Recipe> _availableRecipes = RECIPES;
+
+  void _updateFilters(Filters newFilters) {
+    setState(() {
+      _filters = newFilters;
+
+      _availableRecipes = _availableRecipes.where((recipe) {
+        if (_filters.gluten && !recipe.isGlutenFree) {
+          return false;
+        }
+        if (_filters.lactose && !recipe.isLactoseFree) {
+          return false;
+        }
+        if (_filters.vegetarian && !recipe.isVegetarian) {
+          return false;
+        }
+        if (_filters.vegan && !recipe.isVegan) {
+          return false;
+        }
+
+        return true;
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +71,11 @@ class MyApp extends StatelessWidget {
             ),
       ),
       debugShowCheckedModeBanner: false,
-      routes: appRoutes,
+      routes: getAppRoutes(
+        availableRecipes: _availableRecipes,
+        filters: _filters,
+        saveFilters: _updateFilters,
+      ),
     );
   }
 }
