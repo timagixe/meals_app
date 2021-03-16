@@ -14,12 +14,17 @@ class RecipeDetailsScreen extends StatelessWidget {
     final Recipe recipe = RECIPES.firstWhere((recipe) => recipe.id == id);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(id),
-      ),
-      body: RecipeDetails(
-        recipe: recipe,
-      ),
-    );
+        appBar: AppBar(
+          title: Text(id),
+        ),
+        body: RecipeDetails(
+          recipe: recipe,
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.delete),
+          onPressed: () {
+            Navigator.of(context).pop(id);
+          },
+        ));
   }
 }

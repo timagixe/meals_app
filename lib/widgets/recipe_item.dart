@@ -12,6 +12,7 @@ class RecipeItem extends StatelessWidget {
   final int duration;
   final Affordability affordability;
   final Complexity complexity;
+  final Function removeItem;
 
   const RecipeItem({
     @required this.id,
@@ -20,16 +21,22 @@ class RecipeItem extends StatelessWidget {
     @required this.duration,
     @required this.affordability,
     @required this.complexity,
+    @required this.removeItem,
   })  : assert(id != null),
         assert(title != null),
         assert(imageUrl != null),
         assert(duration != null),
         assert(affordability != null),
-        assert(complexity != null);
+        assert(complexity != null),
+        assert(removeItem != null);
 
   void onRecipeItemTap(BuildContext context) {
     Navigator.of(context).pushNamed(AppRoutes.RECIPE_DETAILS, arguments: {
       'id': id,
+    }).then((value) {
+      if (value != null) {
+        removeItem(value);
+      }
     });
   }
 
