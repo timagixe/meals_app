@@ -15,14 +15,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  List<Recipe> _favoriteRecipes = [];
+  List<Recipe> _availableRecipes = RECIPES;
   Filters _filters = Filters(
     gluten: false,
     lactose: false,
     vegetarian: false,
     vegan: false,
   );
-
-  List<Recipe> _availableRecipes = RECIPES;
 
   void _updateFilters(Filters newFilters) {
     setState(() {
@@ -45,6 +45,25 @@ class _MyAppState extends State<MyApp> {
         return true;
       }).toList();
     });
+  }
+
+  void _updateFavoriteRecipes(String id) {
+    final favoriteRecipeId =
+        _favoriteRecipes.indexWhere((element) => element.id == id);
+
+    if (favoriteRecipeId >= 0) {
+      setState(() {
+        _favoriteRecipes.removeAt(favoriteRecipeId);
+      });
+    } else {
+      setState(() {
+        _favoriteRecipes.add(RECIPES.firstWhere((element) => element.id == id));
+      });
+    }
+  }
+
+  bool _isRecipeFavorite(String id) {
+    return _favoriteRecipes.any((element) => element.id == id);
   }
 
   @override
@@ -75,6 +94,9 @@ class _MyAppState extends State<MyApp> {
         availableRecipes: _availableRecipes,
         filters: _filters,
         saveFilters: _updateFilters,
+        updateFavoriteRecipes: _updateFavoriteRecipes,
+        isRecipeFavorite: _isRecipeFavorite,
+        favoriteRecipes: _favoriteRecipes,
       ),
     );
   }

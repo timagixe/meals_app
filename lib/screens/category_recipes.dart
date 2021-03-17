@@ -36,12 +36,6 @@ class _CategoryRecipesScreenState extends State<CategoryRecipesScreen> {
     }
   }
 
-  void _removeRecipe(String id) {
-    setState(() {
-      recipes.removeWhere((recipe) => recipe.id == id);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +52,6 @@ class _CategoryRecipesScreenState extends State<CategoryRecipesScreen> {
               duration: recipes[index].duration,
               affordability: recipes[index].affordability,
               complexity: recipes[index].complexity,
-              removeItem: _removeRecipe,
             );
           }),
     );
